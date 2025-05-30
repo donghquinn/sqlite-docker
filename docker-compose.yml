@@ -3,8 +3,8 @@ services:
     build:
       dockerfile: Dockerfile
     container_name: sqlite
-    expose:
-      - 8191
+    ports:
+      - 8191:8191
     volumes:
       - ./sqlite:/db
     command: ["tail", "-f", "/dev/null"]
