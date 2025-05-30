@@ -1,0 +1,16 @@
+services:
+  sqlite:
+    build:
+      dockerfile: Dockerfile.sqlite
+    container_name: sqlite
+    expose:
+      - 8191
+    volumes:
+      - ./sqlite:/db
+    command: ["tail", "-f", "/dev/null"]
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
